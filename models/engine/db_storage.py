@@ -61,7 +61,7 @@ class DBStorage:
                                          instance.id)
                     dictionary[key] = instance
         else:
-            query = session.query(eval(cls)).all()
+            query = session.query(eval(cls) if type(cls) == str else cls).all()
             for instance in query:
                 key = '{}.{}'.format(instance.__class__.__name__,
                                      instance.id)
@@ -76,5 +76,5 @@ class DBStorage:
         self.__session = session
 
     def close(self):
-       ''' reload '''
-       self.__session.close()
+        ''' reload '''
+        self.__session.close()
