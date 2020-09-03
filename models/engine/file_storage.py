@@ -62,3 +62,6 @@ class FileStorage:
             if key in self.__objects.keys():
                 del self.__objects[key]
                 self.save()
+    def close(self):
+        ''' desearilazing the JSOn file to objects '''
+        reload()
