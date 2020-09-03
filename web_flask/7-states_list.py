@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 
 @app.teardown_appcontext
-def teardown():
+def tear_down(error):
     ''' ends every process '''
     storage.close()
 
