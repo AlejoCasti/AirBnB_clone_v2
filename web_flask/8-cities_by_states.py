@@ -25,7 +25,7 @@ def state_cities_list():
     ''' return list of states '''
     all_states = storage.all(State).values()
     all_states = sorted(all_states, key=lambda x: x.name)
-    return render_template('8-cities_by_states.html', states=all_states)
+    return render_template('8-cities_by_states.html', states=all_states, )
 
 
 if __name__ == '__main__':
